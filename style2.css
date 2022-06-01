@@ -1,0 +1,51 @@
+body{
+    background: rgb(64, 105, 230);
+    margin: 0px;
+    padding: 2vw;
+}
+h1{
+    text-align: center;
+    color:antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+#color{
+    width: 96vw;
+    height: 10rem;
+    color:purple;
+    background-color: rgb(255, 192, 203);
+    border: 2px solid purple;
+    font-size: 1.5rem;
+}
+#sport{
+    font-size: 1.2rem;
+    color: rgb(72, 7, 132);
+    height: 90vh;
+}
+#lanecat{
+    width: 96vw;
+}
+#spirit{
+    color: rgb(11, 33, 64);
+    font-size: 1.2rem;
+}
+#elephant{
+    width: 50vw;
+}
+#spiderman{
+    width: 90vw;
+}
+#date{
+    width: 50vw;
+}
+#pc{
+    color: coral;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+}
+#challenge{
+    border: 2px solid black;
+    width: 96vw;
+    height: 30vw;
+}
