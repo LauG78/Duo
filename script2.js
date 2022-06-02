@@ -30,7 +30,6 @@ date.title = "I can't even remember when I last went on a date... ";
 let description = document.getElementById("description");
 description.innerHTML = `<div id="description"><p>In three words Dimi is: <ul><li><span style="font-size: 1.3rem; font-weight: 700; color:aliceblue">Short haired</span></li><li>He never leaves home if doesn't have his <b>hair done</b></li><li id="pc">He <strong>LOVES</strong> computers</li></ul></p> </div>`
 
-
 //challenge
 let challenge = document.getElementById("challenge");
 challenge.innerHTML = `<div class="col-12 box" id="boxA" style="background: greenyellow"><div class="chaser" style="background: red"></div></div>`
@@ -38,18 +37,35 @@ challenge.innerHTML = `<div class="col-12 box" id="boxA" style="background: gree
 // Chaser
 ////////////////////////////////////////////
 // chaser circle
-// let box = document.querySelector('.box');
-// let chaser = document.querySelector('.chaser');
-//
-// box.addEventListener('mousemove', (e) => {
-//     let left = e.offsetX;
-//     let top = e.offsetY;
-//     chaser.style.left = `${left - 30}px`
-//     chaser.style.top = `${top - 20}px`
-//
-// })
-//
-//     chaser.style.left = x + "px";
-//     chaser.style.top = y + "px";
-//
-// });
+let boxA = document.querySelector('.box');
+let circle = document.getElementById('circle');
+circle.width = 30+'px';
+circle.height = 30+'px';
+
+boxA.addEventListener('mousemove', (e) => {
+    let left = e.offsetX;
+    let top = e.offsetY;
+    circle.style.left = `${left - 30}px`
+    circle.style.top = `${top - 20}px`
+
+})
+
+circle.style.left = x + "px";
+circle.style.top = y + "px";
+
+function draw()
+{
+    var canvas = document.getElementById('circle');
+    if (canvas.getContext)
+    {
+        var ctx = canvas.getContext('2d');
+        var X = canvas.width / 2;
+        var Y = canvas.height / 2;
+        var R = 45;
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#FF0000';
+        ctx.stroke();
+    }
+}
