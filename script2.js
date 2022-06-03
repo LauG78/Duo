@@ -63,11 +63,44 @@ canvas.height = window.innerHeight    // canvas.height = 600
 // x = 10
 // y = 20
 
+// if (canvas.getContext) {
+//
+//     // rectangle's width and height
+//     const width = 500,
+//         height = 580;
+//
+//     // canvas center X and Y
+//     const centerX = canvas.width / 2,
+//         centerY = canvas.height / 2;
+//
+//     const ctx = canvas.getContext('2d');
+//
+//     // a red rectangle
+//     ctx.fillStyle = 'red';
+//     ctx.fillRect(centerX, centerY, width, height);
+//
+//     // move the origin to the canvas' center
+//     ctx.translate(centerX, centerY);
+//
+//     // add 10 degrees rotation
+//     ctx.rotate(10 * Math.PI / 180);
+//
+//     // draw the second rectangle
+//     ctx.fillStyle = 'rgba(0,0,255,0.5)';
+//     ctx.fillRect(0, 0, width, height);
+// }
+
+
+
+
+
 
 
 const width = 800;
 const height= 400;
 drawRectangle((canvas.width/2)-(width/2), (canvas.height/2)-(height/2), width, height, 'yellow', '');
+
+
 
 drawRectangle(210, 10, 60, 100,'red', true);
 drawRectangle(215, 15, 50, 90,'orange', true);
