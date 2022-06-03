@@ -69,13 +69,13 @@ const width = 800;
 const height= 400;
 drawRectangle((canvas.width/2)-(width/2), (canvas.height/2)-(height/2), width, height, 'yellow', '');
 
-drawRectangle(210, 10, 60, 100,  '','red');
-drawRectangle(215, 15, 50, 90,  '','orange');
-drawRectangle(220, 20, 40, 80,  '','yellow');
-drawRectangle(225, 25, 30, 70,  '','green');
-drawRectangle(230, 30, 20, 60,  '','blue');
-drawRectangle(235, 35, 10, 50,  '','indigo');
-drawRectangle(240, 40, 3, 40,  'violet','');
+drawRectangle(210, 10, 60, 100,'red', true);
+drawRectangle(215, 15, 50, 90,'orange', true);
+drawRectangle(220, 20, 40, 80,'yellow', true);
+drawRectangle(225, 25, 30, 70,'green', true);
+drawRectangle(230, 30, 20, 60,'blue', true);
+drawRectangle(235, 35, 10, 50,'indigo', true);
+drawRectangle(240, 40, 3, 40, 'violet',true);
 
 drawCircle(300, 300, 75, 'red');
 drawCircle(300, 300, 70, 'orange');
@@ -90,12 +90,25 @@ let b = [420, 290];   // [x, y]
 let c = [600, 300];   // [x, y]
 drawTriangle(a, b, c);
 
+a = [425, 225];   // [x, y]
+b = [445, 315];   // [x, y]
+c = [625, 325];   // [x, y]
+drawTriangle(a, b, c);
+a = [400, 200];   // [x, y]
+a1 = [425, 225];   // [x, y]
+drawLine(a[0], a[1], a1[0],a1[1])
+b = [420, 290];
+b1 = [445, 315];
+drawLine(b[0], b[1], b1[0],b1[1])
+c = [600, 300];   // [x, y]
+c1 = [625, 325];   // [x, y]
+drawLine(c[0], c[1], c1[0],c1[1])
 
 
 function drawTriangle(a, b, c){
     ctx.beginPath();
     console.log(`A=${a} B=${b} C=${c}`);
-    alert(`A=${a[0]}  -  B=${a[1]}`);
+    // alert(`A=${a[0]}  -  B=${a[1]}`);
     drawLine(a[0],a[1], b[0],b[1], color);    //drawLine(xFrom, yFrom, xTo, yTo, color="DeepPink")
     drawLine(b[0], b[1], c[0], c[1], color);
     drawLine(c[0], c[1], a[0], a[1], color);
@@ -118,18 +131,18 @@ function drawTriangle(a, b, c){
  *
 * Color is a bit adapted to use include fillColor
  ******************************************************************************** */
-function drawRectangle(x=10, y=20, width=200, height=300, color='red', fillColor=''){
+function drawRectangle(x=10, y=20, width=200, height=300, color='red', bFill=false){
     // Allways Step 1. fire up the beginPath method
         ctx.beginPath()
-    if(fillColor === ''){
-        // pencil style to just stroke (no fill)
-        ctx.strokeStyle = color;
-        // draw rectangle without fill Color
-            ctx.strokeRect(x, y, width, height, color);
+    if(bFill){
+        // draw rectangle with pencil style fill
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, width, height);
     } else {
-        // draw rectangle with fill color!
-        ctx.fillStyle = fillColor;
-        ctx.fillRect(x, y, width, height, '', fillColor);
+        // pencil style stroke (no fill)
+        ctx.strokeStyle = color;
+        // draw rectangle
+        ctx.strokeRect(x, y, width, height);
     }
 }       //function drawRectangle
 
@@ -140,7 +153,7 @@ function drawRectangle(x=10, y=20, width=200, height=300, color='red', fillColor
 *   usage:    drawCircle(x, y, radius, color)
 *   ------
 *****************************************************************************************/
-function drawCircle(x=300, y=300, radius= 75, color=''){
+function drawCircle(x=300, y=300, radius= 75, color='pink'){
     // Step 1. Invoke beginPath method
     ctx.beginPath()
     // Step 2. create arc with start angle =  0      end angle = 360degrees or 2*PI
