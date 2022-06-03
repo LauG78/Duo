@@ -62,34 +62,24 @@ canvas.width  = window.innerWidth   // canvas.width  = 900
 canvas.height = window.innerHeight    // canvas.height = 600
 // x = 10
 // y = 20
-
-// if (canvas.getContext) {
-//
-//     // rectangle's width and height
-//     const width = 500,
-//         height = 580;
-//
-//     // canvas center X and Y
-//     const centerX = canvas.width / 2,
-//         centerY = canvas.height / 2;
-//
-//     const ctx = canvas.getContext('2d');
-//
-//     // a red rectangle
-//     ctx.fillStyle = 'red';
-//     ctx.fillRect(centerX, centerY, width, height);
-//
-//     // move the origin to the canvas' center
-//     ctx.translate(centerX, centerY);
-//
-//     // add 10 degrees rotation
-//     ctx.rotate(10 * Math.PI / 180);
-//
-//     // draw the second rectangle
-//     ctx.fillStyle = 'rgba(0,0,255,0.5)';
-//     ctx.fillRect(0, 0, width, height);
-// }
-
+drawStar();
+function drawStar(){
+    ctx.beginPath();
+    //Set the coordinates of a vertex, and make the path according to the vertex
+    for (var i = 0; i < 5; i++) {
+        ctx.lineTo(Math.cos((18+i*72)/180*Math.PI)*200+200,
+            -Math.sin((18+i*72)/180*Math.PI)*200+200);
+        ctx.lineTo(Math.cos((54+i*72)/180*Math.PI)*80+200,
+            -Math.sin((54+i*72)/180*Math.PI)*80+200);
+    }
+    ctx.closePath();
+    //Set border style and fill color
+    ctx.lineWidth='3';
+    ctx.fillStyle = '#F6F152';
+    ctx.strokeStyle = '#F5270B';
+    ctx.fill();
+    ctx.stroke();
+}
 
 
 
